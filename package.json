@@ -57,6 +57,7 @@
     ]
   },
   "devDependencies": {
+    "cypress": "^10.7.0",
     "gh-pages": "^4.0.0"
   }
 }

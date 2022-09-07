@@ -38,6 +38,8 @@ const Login = () => {
                 placeholder="Email Address"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
+                cy-data="email"
+                id="email"
               />
             </div>
             <div className="form-group mt-3">
@@ -48,6 +50,8 @@ const Login = () => {
                 placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
+                cy-data="password"
+                id="password"
               />
             </div>
             <div className="d-grid gap-2 mt-3">
