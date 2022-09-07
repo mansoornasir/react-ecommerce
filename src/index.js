@@ -4,12 +4,12 @@ import "./index.css";
 // import 'semantic-ui-css/semantic.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import App from './ecomerce/components/App'
+import Counter from './unit/Counter'
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Counter />
   </React.StrictMode>,
   document.getElementById("root")
 );
