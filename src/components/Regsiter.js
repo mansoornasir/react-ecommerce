@@ -4,11 +4,8 @@ const Register = () => {
     const [data, setData] = useState();
 
     useEffect(()=> {
-        // axios.get("http://localhost:3001/api/user/test").then(res => {
-        //     setData(res.data);
-        // })
 
-        axios.post("http://localhost:3001/api/user/register", {
+        axios.post("https://api-try-n-save.herokuapp.com/api/user/register", {
             name: "Jawad",
             email: "jawad5@gmail.com",
             password:"Pakistan123@",

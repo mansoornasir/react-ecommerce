@@ -1,19 +1,13 @@
-import axios from "axios";
-import React, { useState } from "react"
+import React, {useState} from 'react'
+import axios from 'axios';
 import "react-notifications/lib/notifications.css";
 import {NotificationManager} from "react-notifications"
-
-export default function (props) {
-
+const Register = () => {
   const [fullName, setFullName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [address, setAddress] = useState();
 
-  const show = (name) => {
-    NotificationManager.success(`User ${name} has been successfully registered.`, "", 3000);
-  }
-  
   const register = (e) => {
     e.preventDefault();
     axios.post("https://api-try-n-save.herokuapp.com/api/user/register", {
@@ -22,15 +16,17 @@ export default function (props) {
       password: password,
       address: address
     }).then(res => {
-      show(res.data.name);
-    })
-  }
+      NotificationManager.success(`User ${res.data.email} has been successfully registered.`, "", 3000);
 
+    }).catch(err => {
+      NotificationManager.error(err.response.data, "", 3000);
+    });
+  }
 
   return (
     <div className="container">
       <div className="Auth-form-container">
-        <form className="Auth-form" onSubmit={e => register(e)}>
+        <form className="Auth-form" onSubmit={(e) => register(e)}>
           <div className="Auth-form-content">
             <h3 className="Auth-form-title">Register</h3>
             <div className="form-group mt-3">
@@ -84,3 +80,5 @@ export default function (props) {
     </div>
   )
 }
+
+export default Register

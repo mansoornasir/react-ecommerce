@@ -4,7 +4,7 @@ import "./index.css";
 // import 'semantic-ui-css/semantic.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import App from './mern/components/App'
+import App from './ecomerce/components/App'
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
