@@ -2,12 +2,12 @@ import React, {useState} from 'react'
 import axios from 'axios';
 import "react-notifications/lib/notifications.css";
 import {NotificationManager} from "react-notifications"
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const login = (e) => {
     e.preventDefault();
@@ -17,7 +17,7 @@ const Login = () => {
     }).then(res => {
       localStorage.setItem("token",res.headers.token)
       NotificationManager.success("Successfully Logged in!", "", 3000);
-      navigate("/home")
+      // navigate("/home")
     }).catch(err => {
       console.log(err)
     })

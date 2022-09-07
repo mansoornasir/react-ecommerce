@@ -1,0 +1,27 @@
+
+Some commands
+  cy.url()
+      .should('include', '/new')
+  cy.get('#txt').dblclick()
+  cy.log()
+  cy.get('li').each(() => {...})
+  cy.go('back')
+  cy.go('forward')
+  cy.get('.h').parent()
+  cy.get('#txt').should('be.visible').and('be.enabled')
+  cy.wait(1000)
+  cy.title()
+  cy.reload()
+  cy.get('.toc chapters').find('li').should('have.length',5)
+  .should("have.class", "yellow").and()
+  cy.get(' #txt-fld').should('have.value', 'Cypress')
+  cy.get('#txt-fld'').should('contain', 'Cypress')
+  cy.get('#txt-fld'').should('be.visible')
+  cy.get('#txt-fld'').should('not.exist');
+  cy.get('#txt-fld'').should('have.css', 'display', 'block');
+  cy.get('h1#headingText').find('span').should('have.text','Sign in')
+
+  cy.visit('https://accounts.google.com')
+      .then(() => {
+         return cy.get('h1#heading');
+      })
